@@ -5,6 +5,12 @@ class Blog extends \CI_Controller
 {
     public function create()
     {
-        $this->load->view('blog/create');
+        if ($this->input->method(TRUE) === "GET"){
+            $this->load->view('blog/create');
+            return;
+        }
+        elseif ($this->input->method(TRUE) === "POST"){
+            
+        }
     }
 }
