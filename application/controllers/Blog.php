@@ -10,7 +10,8 @@ class Blog extends \CI_Controller
             return;
         }
         elseif ($this->input->method(TRUE) === "POST"){
-            
+            $title = $this->input->post("title");
+            $body = $this->input->post("body");
         }
     }
 }
