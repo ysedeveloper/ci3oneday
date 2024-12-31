@@ -3,6 +3,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Blog extends \CI_Controller
 {
+    public function __construct(){
+        Parent::__construct();
+        $this->load->model("blog_post_model");
+    }
+    
     public function create()
     {
         if ($this->input->method(TRUE) === "GET"){
