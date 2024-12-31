@@ -39,8 +39,22 @@ class Blog extends \CI_Controller
             redirect("/");
         }
         
-        $this->load->view("blog/update", ['blog_post' => $blog_post]);
+        if ($this->input->method(TRUE) === "GET"){
+            $this->load->view("blog/update", ['blog_post' => $blog_post]);
+        }
+        if ($this->input->method(TRUE) === "POST"){
+            $title = $this->input->post("title");
+            $body = $this->input->post("body");
+            
+            $result = $this->blog_post_model->update($id, $title, $body);
+            if ($result){
+                redirect("/blog/read/$id");
+            }
+            
+            $this->load->view("blog/update", ['blog_post' => $blog_post]);
+        }
     }
+    
     
     
 }
