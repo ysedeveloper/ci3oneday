@@ -6,6 +6,7 @@ class Blog extends \CI_Controller
     public function __construct(){
         Parent::__construct();
         $this->load->model("blog_post_model");
+        $this->load->helper("url");        
     }
     
     public function create()
