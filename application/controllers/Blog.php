@@ -33,4 +33,14 @@ class Blog extends \CI_Controller
         $this->load->view("blog/read", ['blog_post' => $blog_post]);
     }
     
+    public function update($id){
+        $blog_post = $this->blog_post_model->read($id);
+        if ($blog_post === null){
+            redirect("/");
+        }
+        
+        $this->load->view("blog/update", ['blog_post' => $blog_post]);
+    }
+    
+    
 }
