@@ -20,7 +20,7 @@ class Blog extends \CI_Controller
             $body = $this->input->post("body");
             
             $id = $this->blog_post_model->insert($title, $body);
-            
+            redirect("/blog/read/$id");
         }
     }
 }
