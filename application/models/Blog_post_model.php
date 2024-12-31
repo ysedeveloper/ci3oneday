@@ -1,5 +1,5 @@
 <?php
-class Blog_model extends CI_Model {
+class Blog_post_model extends CI_Model {
     
     public function __construct()
     {
