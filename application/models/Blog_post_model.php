@@ -17,4 +17,11 @@ class Blog_post_model extends CI_Model {
         return $this->db->insert_id();
     }
     
+    public function read($id){
+        $query_result = $this->db->get_where("blog_post", ['id' => $id]);
+        $blog_post = $query_result->row();
+        return $blog_post;
+    }
+    
+    
 }
