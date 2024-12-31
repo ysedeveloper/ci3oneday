@@ -23,5 +23,15 @@ class Blog_post_model extends CI_Model {
         return $blog_post;
     }
     
+    public function update($id, $title, $body){
+        $data = [
+            "title" => $title,
+            "body" => $body
+        ];
+        
+        return $this->db->update("blog_post", $data, ['id'=> $id]);
+    }
+    
+    
     
 }
