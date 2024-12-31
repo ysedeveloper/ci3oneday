@@ -17,6 +17,9 @@ class Blog extends \CI_Controller
         elseif ($this->input->method(TRUE) === "POST"){
             $title = $this->input->post("title");
             $body = $this->input->post("body");
+            
+            $id = $this->blog_post_model->insert($title, $body);
+            
         }
     }
 }
